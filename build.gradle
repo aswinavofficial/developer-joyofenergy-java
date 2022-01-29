@@ -3,6 +3,7 @@ plugins {
     id 'idea'
     id 'org.springframework.boot' version '2.6.1'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id "org.sonarqube" version "3.3"
 }
 
 ext['log4j2.version'] = "2.17.0"         // mitigates various vulnerabilities in log4j
@@ -10,6 +11,14 @@ ext['log4j2.version'] = "2.17.0"         // mitigates various vulnerabilities in
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "aswinavofficial_developer-joyofenergy-java"
+    property "sonar.organization", "aswinavofficial"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
 }
 
 repositories {
